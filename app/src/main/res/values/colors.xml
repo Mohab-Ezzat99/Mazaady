@@ -10,5 +10,6 @@
 
     <color name="yellow">#FDBC01</color>
     <color name="pink">#D20653</color>
+    <color name="pink_low">#F5D6E1</color>
     <color name="orange">#F45B14</color>
 </resources>
