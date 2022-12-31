@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
+    android:layoutDirection="ltr"
     android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
