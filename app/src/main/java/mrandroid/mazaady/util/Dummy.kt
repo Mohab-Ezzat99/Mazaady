@@ -1,6 +1,7 @@
 package mrandroid.mazaady.util
 
 import mrandroid.mazaady.R
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 object Dummy {
 
@@ -15,6 +16,14 @@ object Dummy {
         list.add(R.drawable.pic_person1)
         list.add(R.drawable.pic_person2)
         list.add(R.drawable.pic_person3)
+        return list
+    }
+
+    fun dummySliderList(): ArrayList<CarouselItem> {
+        val list = ArrayList<CarouselItem>()
+        list.add(CarouselItem(imageDrawable = R.drawable.pic_slider_img))
+        list.add(CarouselItem(imageDrawable = R.drawable.pic_slider_img))
+        list.add(CarouselItem(imageDrawable = R.drawable.pic_slider_img))
         return list
     }
 
