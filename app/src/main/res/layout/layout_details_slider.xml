@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/_200sdp"
     android:layoutDirection="ltr"
+    android:elevation="@dimen/_10sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
-        android:id="@+id/carousel_slider"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:translationZ="8dp"
-        app:autoPlay="true"
-        app:autoPlayDelay="2000"
-        app:carouselType="SHOWCASE"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:background="@drawable/shape_black"
+        android:fontFamily="@font/tajawalmedium"
+        android:padding="@dimen/_4sdp"
+        android:text="02:00 pm"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:showBottomShadow="false"
-        app:showCaption="false"
-        app:showIndicator="false"
-        app:showNavigationButtons="false"
-        app:showTopShadow="false">
-
-    </org.imaginativeworld.whynotimagecarousel.ImageCarousel>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <me.relex.circleindicator.CircleIndicator2
         android:id="@+id/dot_slider"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_22sdp"
-        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_36sdp"
+        android:background="@drawable/shape_black"
+        android:paddingHorizontal="@dimen/_8sdp"
         app:ci_animator="@animator/scale_with_alpha"
         app:ci_drawable="@drawable/ic_dot_selected"
         app:ci_drawable_unselected="@drawable/ic_dot_unselected"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_play" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/iv_play"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
         android:layout_weight="1"
         android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/carousel_slider"
-        app:layout_constraintEnd_toEndOf="@+id/carousel_slider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/carousel_slider"
-        app:srcCompat="@drawable/ic_play"
-        app:tint="@color/black" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_play" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -56,9 +54,9 @@
         android:background="@color/black"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/_8sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/carousel_slider"
-        app:layout_constraintEnd_toEndOf="@+id/carousel_slider"
-        app:layout_constraintTop_toTopOf="@+id/carousel_slider">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/iv_arrow"
@@ -66,7 +64,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="@null"
-            android:padding="@dimen/_4sdp"
+            android:padding="@dimen/_6sdp"
             app:srcCompat="@drawable/ic_arrow_right" />
 
         <ImageView
@@ -75,7 +73,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="@null"
-            android:padding="@dimen/_2sdp"
+            android:padding="@dimen/_4sdp"
             app:srcCompat="@drawable/ic_apps" />
 
         <ImageView
@@ -83,7 +81,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="0dp"
             android:layout_weight="1"
-
+            android:padding="@dimen/_2sdp"
             android:contentDescription="@null"
             app:srcCompat="@drawable/ic_fav" />
 
@@ -92,6 +90,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:padding="@dimen/_2sdp"
             android:contentDescription="@null"
             app:srcCompat="@drawable/ic_date" />
 
@@ -100,6 +99,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:padding="@dimen/_2sdp"
             android:contentDescription="@null"
             app:srcCompat="@drawable/ic_flag" />
 
@@ -108,6 +108,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:padding="@dimen/_2sdp"
             android:contentDescription="@null"
             app:srcCompat="@drawable/ic_share" />
     </LinearLayout>

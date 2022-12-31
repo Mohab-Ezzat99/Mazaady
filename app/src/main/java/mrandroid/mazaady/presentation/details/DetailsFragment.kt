@@ -43,10 +43,10 @@ class DetailsFragment : BindingFragment<FragmentDetailsBinding>() {
     }
 
     private fun setupSlider() {
-        binding.inSlider.apply {
+        binding.apply {
             carouselSlider.registerLifecycle(lifecycle)
             carouselSlider.setData(Dummy.dummySliderList())
-            carouselSlider.setIndicator(dotSlider)
+            carouselSlider.setIndicator(inSlider.dotSlider)
             carouselSlider.carouselListener = object : CarouselListener {
                 override fun onCreateViewHolder(
                     layoutInflater: LayoutInflater,
