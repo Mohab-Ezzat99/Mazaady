@@ -1,21 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="ltr"
+    android:fillViewport="true"
+    android:scrollbars="none"
     tools:context=".presentation.MainActivity">
 
-    <Button
-        android:id="@+id/btn_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Details"
-        android:fontFamily="@font/tajawalbold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/in_autoText1"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/in_autoText2"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText1" />
+
+        <include
+            android:id="@+id/in_autoText3"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText2" />
+
+        <include
+            android:id="@+id/in_autoText4"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText3" />
+
+        <include
+            android:id="@+id/in_autoText5"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText4" />
+
+        <include
+            android:id="@+id/in_autoText6"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText5" />
+
+        <include
+            android:id="@+id/in_autoText7"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText6" />
+
+        <include
+            android:id="@+id/in_autoText8"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText7" />
+
+        <include
+            android:id="@+id/in_autoText9"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText8" />
+
+        <include
+            android:id="@+id/in_autoText10"
+            layout="@layout/layout_auto_text"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_4sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText9" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_margin="@dimen/_8sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/shape_pink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_autoText10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
