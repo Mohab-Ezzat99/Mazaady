@@ -44,11 +44,12 @@
             app:layout_constraintTop_toBottomOf="@+id/in_subCategories" />
 
         <include
-            android:id="@+id/in_specifyHere"
-            layout="@layout/layout_auto_text"
+            android:id="@+id/in_specifyProcess"
+            layout="@layout/layout_input_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/in_processType" />
@@ -61,7 +62,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_specifyHere" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyProcess" />
+
+        <include
+            android:id="@+id/in_specifyBrand"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_brand" />
 
         <include
             android:id="@+id/in_model"
@@ -71,7 +83,7 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_brand" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyBrand" />
 
         <include
             android:id="@+id/in_type"
@@ -94,6 +106,17 @@
             app:layout_constraintTop_toBottomOf="@+id/in_type" />
 
         <include
+            android:id="@+id/in_specifyTransmissionType"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_transmissionType" />
+
+        <include
             android:id="@+id/in_fuelType"
             layout="@layout/layout_auto_text"
             android:layout_width="0dp"
@@ -101,7 +124,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_transmissionType" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyTransmissionType" />
+
+        <include
+            android:id="@+id/in_specifyFuelType"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_fuelType" />
 
         <include
             android:id="@+id/in_condition"
@@ -111,7 +145,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_fuelType" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyFuelType" />
+
+        <include
+            android:id="@+id/in_specifyCondition"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_condition" />
 
         <include
             android:id="@+id/in_color"
@@ -121,7 +166,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_condition" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyCondition" />
+
+        <include
+            android:id="@+id/in_specifyColor"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_color" />
 
         <include
             android:id="@+id/in_odometer"
@@ -131,10 +187,21 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_color" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyColor" />
+
+        <include
+            android:id="@+id/in_specifyOdometer"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_odometer" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_submit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_8sdp"
@@ -146,7 +213,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_odometer"
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyOdometer"
             app:layout_constraintVertical_bias="0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

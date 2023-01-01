@@ -46,7 +46,7 @@ class SearchFragment : BottomSheetDialogFragment(), TextAdapter.OnItemClickListe
             tvTitle.text = title
 
             val displayOptions = ArrayList<String>()
-            displayOptions.add("Other")
+            displayOptions.add("other")
             displayOptions.addAll(optionsList)
             textAdapter.submitList(displayOptions)
             rvOptions.adapter = textAdapter
@@ -57,7 +57,6 @@ class SearchFragment : BottomSheetDialogFragment(), TextAdapter.OnItemClickListe
 
     override fun onTextClick(value: String) {
         viewModelShared.selectionValue.value = value
-        viewModelShared.optionsResult[title] = value
         findNavController().popBackStack()
     }
 }

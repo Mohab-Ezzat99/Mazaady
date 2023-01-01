@@ -9,7 +9,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SharedViewModel @Inject constructor() : ViewModel() {
 
-    val optionsResult = HashMap<String, String>()
     val selectionValue = MutableLiveData<String>()
 
 }
