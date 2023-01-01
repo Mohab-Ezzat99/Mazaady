@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -51,6 +52,16 @@ class SearchFragment : BottomSheetDialogFragment(), TextAdapter.OnItemClickListe
             textAdapter.submitList(displayOptions)
             rvOptions.adapter = textAdapter
 
+            etSearch.addTextChangedListener { text ->
+                if (text.toString().isEmpty()) textAdapter.submitList(displayOptions)
+                else {
+                    val list = displayOptions.filter {
+                        it.lowercase().contains(text.toString().lowercase())
+                    }
+                    textAdapter.submitList(null)
+                    textAdapter.submitList(list)
+                }
+            }
         }
 
     }

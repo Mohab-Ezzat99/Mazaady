@@ -19,6 +19,7 @@ import mrandroid.mazaady.presentation.BindingFragment
 import mrandroid.mazaady.presentation.SharedViewModel
 import mrandroid.mazaady.presentation.bottomsheet.SearchFragmentArgs
 import mrandroid.mazaady.presentation.dialog.LoadingDialog
+import mrandroid.mazaady.presentation.result.ResultFragmentArgs
 import mrandroid.mazaady.util.showToast
 import mrandroid.mazaady.util.spinnerAdapter
 import mrandroid.mazaady.util.state.UiState
@@ -287,13 +288,15 @@ class CategoriesFragment : BindingFragment<FragmentCategoriesBinding>() {
             if (brandValue.isEmpty()) brandValue = inSpecifyBrand.et.text.toString().trim()
 
             var transmissionValue = inTransmissionType.at.text.toString().trim()
-            if (transmissionValue.isEmpty()) transmissionValue = inSpecifyTransmissionType.et.text.toString().trim()
+            if (transmissionValue.isEmpty()) transmissionValue =
+                inSpecifyTransmissionType.et.text.toString().trim()
 
             var fuelValue = inFuelType.at.text.toString().trim()
             if (fuelValue.isEmpty()) fuelValue = inSpecifyFuelType.et.text.toString().trim()
 
             var conditionValue = inCondition.at.text.toString().trim()
-            if (conditionValue.isEmpty()) conditionValue = inSpecifyCondition.et.text.toString().trim()
+            if (conditionValue.isEmpty()) conditionValue =
+                inSpecifyCondition.et.text.toString().trim()
 
             var colorValue = inColor.at.text.toString().trim()
             if (colorValue.isEmpty()) colorValue = inSpecifyColor.et.text.toString().trim()
@@ -310,8 +313,12 @@ class CategoriesFragment : BindingFragment<FragmentCategoriesBinding>() {
             resultList.add(ResultModel(title = "Fuel Type", value = fuelValue))
             resultList.add(ResultModel(title = "Condition", value = conditionValue))
             resultList.add(ResultModel(title = "Color", value = colorValue))
-            resultList.add(ResultModel(title = "Odeometer", value = odometerValue))
+            resultList.add(ResultModel(title = "Odometer", value = odometerValue))
 
+            findNavController().navigate(
+                R.id.resultFragment,
+                ResultFragmentArgs(resultList.toTypedArray()).toBundle()
+            )
         }
     }
 }

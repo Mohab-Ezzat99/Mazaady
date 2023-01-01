@@ -28,4 +28,13 @@
             android:name="title"
             app:argType="string" />
     </dialog>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="mrandroid.mazaady.presentation.result.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="resultList"
+            app:argType="mrandroid.mazaady.domain.model.ResultModel[]" />
+    </fragment>
 </navigation>

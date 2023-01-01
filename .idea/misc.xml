@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/drawable/shape_white_up.xml" value="0.138" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/dialog_loading.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/fragment_bottom_sheet_search.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/fragment_categories.xml" value="0.1796875" />
+        <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/fragment_result.xml" value="0.1796875" />
+        <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/item_result.xml" value="0.224609375" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/item_text.xml" value="0.17864583333333334" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/layout_auto_text.xml" value="0.1796875" />
         <entry key="..\:/AndroidStudioProjects/Mazaady/app/src/main/res/layout/layout_input_text.xml" value="0.1796875" />
