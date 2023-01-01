@@ -47,7 +47,7 @@ class TextAdapter @Inject constructor() :
         init {
             binding.root.setOnClickListener {
                 if (bindingAdapterPosition != RecyclerView.NO_POSITION) {
-                    listener.onImgClick(bindingAdapterPosition)
+                    listener.onTextClick(currentList[bindingAdapterPosition])
                     setCurrentPosition(bindingAdapterPosition)
                 }
             }
@@ -68,7 +68,7 @@ class TextAdapter @Inject constructor() :
     }
 
     interface OnItemClickListener {
-        fun onImgClick(position: Int)
+        fun onTextClick(value: String)
     }
 
     //check difference
