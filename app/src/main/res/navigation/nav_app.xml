@@ -16,4 +16,13 @@
         android:name="mrandroid.mazaady.presentation.details.DetailsFragment"
         android:label="DetailsFragment"
         tools:layout="@layout/fragment_details" />
+    <dialog
+        android:id="@+id/bottomSheetSearchFragment"
+        android:name="mrandroid.mazaady.presentation.bottomsheet.BottomSheetSearchFragment"
+        android:label="BottomSheetSearchFragment"
+        tools:layout="@layout/fragment_bottom_sheet_search">
+        <argument
+            android:name="optionsList"
+            app:argType="string[]" />
+    </dialog>
 </navigation>

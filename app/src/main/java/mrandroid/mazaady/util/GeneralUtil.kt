@@ -1,7 +1,10 @@
 package mrandroid.mazaady.util
 
+import android.content.Context
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.R
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,7 +25,8 @@ fun <T> toResultFlow(call: suspend () -> Response<T>): Flow<ApiState<T>> = flow 
         if (response.isSuccessful) emit(ApiState.Success(response.body()))
         else {
             Log.d(TAG, response.message())
-            emit(ApiState.Error(
+            emit(
+                ApiState.Error(
                     UiText.DynamicString(response.message()),
                     response.raw().code(),
                     response.errorBody()
@@ -40,3 +44,10 @@ fun <T> toResultFlow(call: suspend () -> Response<T>): Flow<ApiState<T>> = flow 
         emit(ApiState.Error(UiText.DynamicString("Something wrong")))
     }
 }
+
+fun spinnerAdapter(context: Context, list: List<String>) =
+    ArrayAdapter(
+        context,
+        R.layout.support_simple_spinner_dropdown_item,
+        list
+    )

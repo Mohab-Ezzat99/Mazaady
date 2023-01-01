@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import mrandroid.mazaady.R
 import mrandroid.mazaady.databinding.ActivityMainBinding
+import mrandroid.mazaady.presentation.dialog.LoadingDialog
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        LoadingDialog.init(this)
         setContentView(binding.root)
 
         val navHostFragment = supportFragmentManager
