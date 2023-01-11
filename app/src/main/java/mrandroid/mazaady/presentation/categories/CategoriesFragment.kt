@@ -59,121 +59,8 @@ class CategoriesFragment : BindingFragment<FragmentCategoriesBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initFields()
+        handleFieldsClicks()
         viewModel.getAllCats()
-
-        binding.apply {
-
-            inMainCategories.at.setOnClickListener {
-                propertySelection = PropertySelection.MainCat
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        mainCatsList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            inSubCategories.at.setOnClickListener {
-                propertySelection = PropertySelection.SubCat
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        subCatsList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            inProcessType.at.setOnClickListener {
-                propertySelection = PropertySelection.ProcessType
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        processTypeList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            inBrand.at.setOnClickListener {
-                propertySelection = PropertySelection.Brand
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(brandList.toTypedArray(), propertySelection.label).toBundle()
-                )
-            }
-
-            inModel.at.setOnClickListener {
-                propertySelection = PropertySelection.Model
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(modelList.toTypedArray(), propertySelection.label).toBundle()
-                )
-            }
-
-            inType.at.setOnClickListener {
-                propertySelection = PropertySelection.Type
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(typeList.toTypedArray(), propertySelection.label).toBundle()
-                )
-            }
-
-            inTransmissionType.at.setOnClickListener {
-                propertySelection = PropertySelection.TransmissionType
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        transmissionTypeList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            inFuelType.at.setOnClickListener {
-                propertySelection = PropertySelection.FuelType
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(fuelList.toTypedArray(), propertySelection.label).toBundle()
-                )
-            }
-
-            inCondition.at.setOnClickListener {
-                propertySelection = PropertySelection.Condition
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        conditionList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            inColor.at.setOnClickListener {
-                propertySelection = PropertySelection.Color
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(colorList.toTypedArray(), propertySelection.label).toBundle()
-                )
-            }
-
-            inOdometer.at.setOnClickListener {
-                propertySelection = PropertySelection.Odometer
-                findNavController().navigate(
-                    R.id.searchFragment,
-                    SearchFragmentArgs(
-                        odometerList.toTypedArray(),
-                        propertySelection.label
-                    ).toBundle()
-                )
-            }
-
-            btnSubmit.setOnClickListener {
-                collectResults()
-            }
-
-        }
 
         fetchCategoriesState()
         fetchPropertiesState()
@@ -206,6 +93,109 @@ class CategoriesFragment : BindingFragment<FragmentCategoriesBinding>() {
             inCondition.at.inputType = InputType.TYPE_NULL
             inColor.at.inputType = InputType.TYPE_NULL
             inOdometer.at.inputType = InputType.TYPE_NULL
+        }
+    }
+
+    private fun handleFieldsClicks() {
+        binding.apply {
+            inMainCategories.at.setOnClickListener {
+                propertySelection = PropertySelection.MainCat
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        mainCatsList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            inSubCategories.at.setOnClickListener {
+                propertySelection = PropertySelection.SubCat
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        subCatsList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            inProcessType.at.setOnClickListener {
+                propertySelection = PropertySelection.ProcessType
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        processTypeList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            inBrand.at.setOnClickListener {
+                propertySelection = PropertySelection.Brand
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(brandList.toTypedArray(), propertySelection.label).toBundle()
+                )
+            }
+            inModel.at.setOnClickListener {
+                propertySelection = PropertySelection.Model
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(modelList.toTypedArray(), propertySelection.label).toBundle()
+                )
+            }
+            inType.at.setOnClickListener {
+                propertySelection = PropertySelection.Type
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(typeList.toTypedArray(), propertySelection.label).toBundle()
+                )
+            }
+            inTransmissionType.at.setOnClickListener {
+                propertySelection = PropertySelection.TransmissionType
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        transmissionTypeList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            inFuelType.at.setOnClickListener {
+                propertySelection = PropertySelection.FuelType
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(fuelList.toTypedArray(), propertySelection.label).toBundle()
+                )
+            }
+            inCondition.at.setOnClickListener {
+                propertySelection = PropertySelection.Condition
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        conditionList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            inColor.at.setOnClickListener {
+                propertySelection = PropertySelection.Color
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(colorList.toTypedArray(), propertySelection.label).toBundle()
+                )
+            }
+            inOdometer.at.setOnClickListener {
+                propertySelection = PropertySelection.Odometer
+                findNavController().navigate(
+                    R.id.searchFragment,
+                    SearchFragmentArgs(
+                        odometerList.toTypedArray(),
+                        propertySelection.label
+                    ).toBundle()
+                )
+            }
+            btnSubmit.setOnClickListener {
+                collectResults()
+            }
         }
     }
 
