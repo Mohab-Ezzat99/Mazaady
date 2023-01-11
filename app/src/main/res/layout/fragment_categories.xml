@@ -24,6 +24,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <include
+            android:id="@+id/in_specifyMainCat"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_mainCategories" />
+
+        <include
             android:id="@+id/in_subCategories"
             layout="@layout/layout_auto_text"
             android:layout_width="0dp"
@@ -31,7 +42,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_mainCategories" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyMainCat" />
+
+        <include
+            android:id="@+id/in_specifySubCat"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_subCategories" />
 
         <include
             android:id="@+id/in_processType"
@@ -41,7 +63,7 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_subCategories" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifySubCat" />
 
         <include
             android:id="@+id/in_specifyProcess"
@@ -86,6 +108,17 @@
             app:layout_constraintTop_toBottomOf="@+id/in_specifyBrand" />
 
         <include
+            android:id="@+id/in_specifyModel"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_model" />
+
+        <include
             android:id="@+id/in_type"
             layout="@layout/layout_auto_text"
             android:layout_width="0dp"
@@ -93,7 +126,18 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_model" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyModel" />
+
+        <include
+            android:id="@+id/in_specifyType"
+            layout="@layout/layout_input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_type" />
 
         <include
             android:id="@+id/in_transmissionType"
@@ -103,7 +147,7 @@
             android:layout_margin="@dimen/_4sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/in_type" />
+            app:layout_constraintTop_toBottomOf="@+id/in_specifyType" />
 
         <include
             android:id="@+id/in_specifyTransmissionType"

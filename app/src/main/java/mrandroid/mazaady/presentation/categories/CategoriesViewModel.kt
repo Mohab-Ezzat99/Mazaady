@@ -28,12 +28,17 @@ class CategoriesViewModel @Inject constructor(
     private val _propertiesState = MutableStateFlow<UiState<PropertiesResponse>>(UiState.Empty())
     val propertiesState: StateFlow<UiState<PropertiesResponse>> = _propertiesState
 
+    private val _optionsState = MutableStateFlow<UiState<PropertiesResponse>>(UiState.Empty())
+    val optionsState: StateFlow<UiState<PropertiesResponse>> = _optionsState
+
     private var categoriesJob: Job? = null
     private var propertiesJob: Job? = null
+    private var optionsJob: Job? = null
 
     fun cancelRequest() {
         categoriesJob?.cancel()
         propertiesJob?.cancel()
+        optionsJob?.cancel()
     }
 
     fun getAllCats() {
@@ -75,6 +80,28 @@ class CategoriesViewModel @Inject constructor(
                         is Resource.TokenExpired -> _propertiesState.value = UiState.TokenExpired()
                         is Resource.Loading -> {
                             _propertiesState.value = UiState.Loading()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    fun getOptionsBySubId(subId: Int) {
+        optionsJob?.cancel()
+        optionsJob = viewModelScope.launch {
+            withContext(coroutineContext) {
+                repository.getOptionsBySubId(subId).collect { result ->
+                    when (result) {
+                        is Resource.Success -> {
+                            _optionsState.value = UiState.Success(result.data)
+                        }
+                        is Resource.Error -> {
+                            _optionsState.value = UiState.Error(result.message!!)
+                        }
+                        is Resource.TokenExpired -> _optionsState.value = UiState.TokenExpired()
+                        is Resource.Loading -> {
+                            _optionsState.value = UiState.Loading()
                         }
                     }
                 }

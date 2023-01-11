@@ -56,4 +56,26 @@ class MazaadyRepositoryImpl(private val mazaadyApi: MazaadyApi) : MazaadyReposit
         }
     }
 
+    override suspend fun getOptionsBySubId(subId: Int): Flow<Resource<PropertiesResponse>> {
+        return flow {
+            val result = toResultFlow { mazaadyApi.getOptionsBySubId(subId) }
+            result.collect {
+                when (it) {
+                    is ApiState.Loading -> emit(Resource.Loading())
+                    is ApiState.Error -> {
+                        emit(
+                            Resource.Error(
+                                message = it.message!!,
+                                errorCode = it.errorCode,
+                                errorBody = it.errorBody
+                            )
+                        )
+                    }
+                    is ApiState.TokenExpired -> emit(Resource.TokenExpired())
+                    is ApiState.Success -> emit(Resource.Success(it.data))
+                }
+            }
+        }
+    }
+
 }

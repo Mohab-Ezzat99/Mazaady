@@ -97,7 +97,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_bidders"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="@+id/imageView"

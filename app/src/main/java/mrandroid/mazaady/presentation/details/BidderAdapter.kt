@@ -10,8 +10,6 @@ import mrandroid.mazaady.databinding.ItemBidderBinding
 import javax.inject.Inject
 
 class BidderAdapter @Inject constructor() : ListAdapter<Int, BidderAdapter.BidderViewHolder>(ITEM_COMPARATOR) {
-    private lateinit var listener: OnItemClickListener
-    private var selectedPosition = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BidderViewHolder(
         ItemBidderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,27 +27,8 @@ class BidderAdapter @Inject constructor() : ListAdapter<Int, BidderAdapter.Bidde
         return position
     }
 
-    fun setCurrentPosition(position: Int) {
-        Log.d("Mohab", "album position $position")
-        if (selectedPosition != position && position != -1) {
-            selectedPosition = position
-            notifyDataSetChanged()
-        }
-    }
-
-    fun getCurrentPosition() = selectedPosition
-
     inner class BidderViewHolder(private val binding: ItemBidderBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        init {
-            binding.root.setOnClickListener {
-                if (bindingAdapterPosition != RecyclerView.NO_POSITION) {
-                    listener.onImgClick(bindingAdapterPosition)
-                    setCurrentPosition(bindingAdapterPosition)
-                }
-            }
-        }
 
         fun bind(model: Int) {
             binding.apply {
@@ -57,14 +36,6 @@ class BidderAdapter @Inject constructor() : ListAdapter<Int, BidderAdapter.Bidde
             }
         }
 
-    }
-
-    fun setListener(listener: OnItemClickListener) {
-        this.listener = listener
-    }
-
-    interface OnItemClickListener {
-        fun onImgClick(position: Int)
     }
 
     //check difference

@@ -16,4 +16,7 @@ interface MazaadyApi {
     @GET("api/properties")
     suspend fun getPropertiesByCatId(@Query("cat") catId: Int): Response<PropertiesResponse>
 
+    @GET("api/get-options-child/{subId}")
+    suspend fun getOptionsBySubId(@Path("subId") subId: Int): Response<PropertiesResponse>
+
 }

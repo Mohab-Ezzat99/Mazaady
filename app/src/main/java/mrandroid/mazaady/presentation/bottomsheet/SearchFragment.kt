@@ -15,6 +15,7 @@ import mrandroid.mazaady.R
 import mrandroid.mazaady.databinding.FragmentSearchBinding
 import mrandroid.mazaady.presentation.SharedViewModel
 import mrandroid.mazaady.presentation.categories.CategoriesViewModel
+import mrandroid.mazaady.util.Constants
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -47,7 +48,7 @@ class SearchFragment : BottomSheetDialogFragment(), TextAdapter.OnItemClickListe
             tvTitle.text = title
 
             val displayOptions = ArrayList<String>()
-            displayOptions.add("other")
+            displayOptions.add(Constants.OTHER)
             displayOptions.addAll(optionsList)
             textAdapter.submitList(displayOptions)
             rvOptions.adapter = textAdapter
